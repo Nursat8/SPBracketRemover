@@ -9,10 +9,11 @@ def to_excel(df):
     """
     output = io.BytesIO()
     writer = pd.ExcelWriter(output, engine='xlsxwriter')
-    df.to_excel(writer, sheet_name="Removed duplicates ", index=False)
-    writer.save()
+    df.to_excel(writer, sheet_name="Removed duplicates", index=False)
+    writer.close()  # Use close() instead of save() to finalize the file
     processed_data = output.getvalue()
     return processed_data
+
 
 st.title("Remove Bracketed Text from Company Names")
 
