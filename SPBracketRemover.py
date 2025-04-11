@@ -20,7 +20,7 @@ uploaded_file = st.file_uploader("Upload your Excel file", type=["xlsx"])
 
 if uploaded_file is not None:
     # Read only the "Remove duplicates" sheet
-    df = pd.read_excel(uploaded_file, sheet_name="Remove duplicates")
+    df = pd.read_excel(uploaded_file, sheet_name="Removed duplicates")
 
     # Perform the cleaning
     pattern = r"(?:\.\s*\([^()]*\)|\([^()]*\))$"
