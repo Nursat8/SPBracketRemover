@@ -9,7 +9,7 @@ def to_excel(df):
     """
     output = io.BytesIO()
     writer = pd.ExcelWriter(output, engine='xlsxwriter')
-    df.to_excel(writer, sheet_name="Remove duplicates", index=False)
+    df.to_excel(writer, sheet_name="Removed duplicates", index=False)
     writer.save()
     processed_data = output.getvalue()
     return processed_data
@@ -19,7 +19,7 @@ st.title("Remove Bracketed Text from Company Names")
 uploaded_file = st.file_uploader("Upload your Excel file", type=["xlsx"])
 
 if uploaded_file is not None:
-    # Read only the "Remove duplicates" sheet
+    # Read only the "Removed duplicates" sheet
     df = pd.read_excel(uploaded_file, sheet_name="Removed duplicates")
 
     # Perform the cleaning
