@@ -35,6 +35,6 @@ if uploaded_file is not None:
     st.download_button(
         label="Download cleaned Excel",
         data=cleaned_data,
-        file_name="Cleaned_Merge_Level1.xlsx",
+        file_name="SPGlobal brackets removed.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
